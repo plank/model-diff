@@ -13,7 +13,7 @@ use Plank\Checkpoint\Tests\Support\Models\Servers\Server;
 
 $factory->define(Page::class, function (Faker $faker) {
     return [
-        'template' => $faker->word . 'layout',
+        'template' => $faker->word.'layout',
         'title' => $faker->words(4, true),
         'slug' => $faker->unique()->word,
         'position' => $faker->randomNumber(3),
@@ -25,8 +25,9 @@ $factory->define(Block::class, function (Faker $faker) {
     $callout = $faker->randomElement([
         Post::inRandomOrder()->first(),
         Server::inRandomOrder()->first(),
-        null
+        null,
     ]);
+
     return [
         'page_id' => Page::inRandomOrder()->first() ?? factory(Page::class),
         'calloutable_id' => $callout->id ?? null,
@@ -58,6 +59,7 @@ $factory->define(Group::class, function (Faker $faker) {
 
 $factory->define(Environment::class, function (Faker $faker) {
     $groups = Group::inRandomOrder()->take(2)->get();
+
     return [
         'title' => $faker->words(4, true),
         'slug' => $faker->unique()->word,

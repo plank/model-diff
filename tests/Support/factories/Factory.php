@@ -15,7 +15,6 @@ $factory->define(Post::class, function (Faker $faker) {
     ];
 });
 
-
 $factory->define(Comment::class, function (Faker $faker) {
     return [
         'body' => $faker->paragraph,

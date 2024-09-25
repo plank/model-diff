@@ -2,9 +2,9 @@
 
 namespace Plank\ModelDiff;
 
+use Plank\ModelDiff\Commands\ModelDiffCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Plank\ModelDiff\Commands\ModelDiffCommand;
 
 class ModelDiffServiceProvider extends PackageServiceProvider
 {

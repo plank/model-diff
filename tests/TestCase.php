@@ -23,14 +23,13 @@ abstract class TestCase extends Orchestra
     protected function defineDatabaseMigrations()
     {
         $this->loadMigrationsFrom([
-            '--path' => __DIR__ . '/Support/migrations',
-            '--database' => 'sqlite'
+            '--path' => __DIR__.'/Support/migrations',
+            '--database' => 'sqlite',
         ]);
     }
 
     /**
-     * @param \Illuminate\Foundation\Application $app
-     *
+     * @param  \Illuminate\Foundation\Application  $app
      * @return void
      */
     protected function getEnvironmentSetUp($app)
@@ -39,19 +38,18 @@ abstract class TestCase extends Orchestra
 
         $app['config']->set('database.connections.sqlite', [
             'driver' => 'sqlite',
-            'database' => ':memory:'
+            'database' => ':memory:',
         ]);
     }
 
     /**
      * @param  \Illuminate\Foundation\Application  $app
-     *
      * @return array
      */
     protected function getPackageProviders($app)
     {
         return [
-            ModelDiffServiceProvider::class
+            ModelDiffServiceProvider::class,
         ];
     }
 }
