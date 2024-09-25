@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Plank\ModelDiff\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class ModelDiffCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'model-diff';
 
     public $description = 'My command';
 
